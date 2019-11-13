@@ -6,6 +6,10 @@ server {
     index index.html;
   }
 
+  location /data {
+    proxy_pass ${CSV_URL};
+  }
+
   # custom error page for 404 errors
   error_page 404 /error.html;
   location = /error.html {
